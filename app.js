@@ -28,6 +28,7 @@ const gpa = document.getElementById("gpa");
 
 const submitBtn = document.getElementById("submitBtn");
 const cancelBtn = document.getElementById("cancelBtn");
+const resetBtn = document.getElementById("resetBtn");
 const formTitle = document.getElementById("formTitle");
 
 let students = [];
@@ -120,4 +121,13 @@ cancelBtn.addEventListener("click", () => {
   submitBtn.textContent = "Thêm";
   cancelBtn.hidden = true;
   formTitle.textContent = "Thêm sinh viên";
+  message.textContent = "";
 });
+
+resetBtn.addEventListener("click", () => {
+  form.reset();
+  message.textContent = "";
+});
+
+// Render danh sách khi trang load
+render();
