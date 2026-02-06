@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quản lý Sinh viên</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Quản lý thông tin sinh viên</h1>
+        <p class="subtitle">
+          Nhập – hiển thị – cập nhật danh sách sinh viên 
+        </p>
+      </header>
+
+      <div class="grid">
+        <!-- FORM -->
+        <section class="card">
+          <h2 id="formTitle">Thêm sinh viên</h2>
+
+          <form id="studentForm">
+            <label>Mã SV</label>
+            <input id="maSV" required />
+
+            <label>Họ và tên</label>
+            <input id="hoTen" required />
+
+            <label>Ngày sinh</label>
+            <input id="ngaySinh" type="date" required />
+
+            <label>Lớp học</label>
+            <input id="lopHoc" required />
+
+            <label>GPA (0 - 4)</label>
+            <input
+              id="gpa"
+              type="number"
+              step="0.01"
+              min="0"
+              max="4"
+              required
+            />
+
+            <div class="actions">
+              <button type="submit" class="btn primary" id="submitBtn">
+                Thêm
+              </button>
+              <button type="button" class="btn ghost" id="resetBtn">
+                Làm mới
+              </button>
+              <button type="button" class="btn danger" id="cancelBtn" hidden>
+                Hủy sửa
+              </button>
+            </div>
+          </form>
+
+          <div id="message"></div>
+        </section>
+
+        <!-- TABLE -->
+        <section class="card">
+          <h2>Danh sách sinh viên</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Mã SV</th>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Lớp</th>
+                <th>GPA</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+          </table>
+
+          <p id="emptyText">Chưa có sinh viên nào.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+  </body>
+</html>
